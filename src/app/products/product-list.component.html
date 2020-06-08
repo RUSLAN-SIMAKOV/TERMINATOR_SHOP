@@ -5,7 +5,7 @@
   <div class='card-body'>
     <div class='row'>
       <div class='col-md-2'> Filter by </div>
-      <div class='col-md-4'> <input type="text"/> </div>
+      <app-filter-textbox></app-filter-textbox>
     </div>
     <div class='row'>
       <div class='col-md-6'> Filtered by: </div>
@@ -15,22 +15,22 @@
         <thead>
         <tr>
           <th>
-            <button class='btn btn-primary'> Show Images</button>
+            <button class='btn btn-primary' (click)="changeVisibilityImages()"> Show Images</button>
           </th>
-          <th>{{product}}</th>
-          <th>{{code}}</th>
+          <th (click)="sort('productName')">{{product}}</th>
+          <th (click)="sort('productCode')">{{code}}</th>
           <th>{{available}}</th>
-          <th>{{price}}</th>
-          <th>{{fiveStarRating}}</th>
+          <th (click)="sort('price')">{{price}}</th>
+          <th (click)="sort('starRating')">{{fiveStarRating}}</th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor = 'let product of products'>
-          <td></td>
+          <td [hidden]="!isVisible"><img [src] = 'product.imageUrl'></td>
+          <td [hidden]="isVisible"> "SECRET IMAGES" </td>
           <td>{{product.productName}}</td>
-          <td>{{product.productCode}}</td>
-          <td>{{product.availability}}</td>
-          <td>{{product.price}}</td>
+          <td>{{product.productCode | lowercase | capitalize}}</td>
+          <td>{{product.price | currency: currencyCode: 'symbol'}}</td>
           <td>{{product.starRating}}</td>
         </tr>
         </tbody>

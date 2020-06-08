@@ -1,11 +1,11 @@
-import {Component} from '@angular/core';
+import {Component} from "@angular/core";
 
 @Component({
-  selector: 'app-root',
+  selector: "app-root",
   template:
-    '<div><h1>{{pageTitle}}</h1><app-products></app-products></div>'
+    "<div><h1>{{pageTitle}}</h1><app-products></app-products></div>"
 })
 
 export class AppComponent {
-  pageTitle: string = 'Terminator shop';
+  pageTitle: string = "Terminator shop";
 }
