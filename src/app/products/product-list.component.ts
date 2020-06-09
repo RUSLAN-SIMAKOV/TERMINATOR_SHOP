@@ -86,7 +86,7 @@ export class ProductListComponent {
           prod.productId.toString().indexOf(data) > -1 ||
           prod.price.toString().indexOf(data) > -1;
       });
-    }
+    } else {this.filteredProducts = this.products; }
   }
 
   sort(prop: string) {

@@ -5,7 +5,7 @@
   <div class='card-body'>
     <div class='row'>
       <div class='col-md-2'> Filter by </div>
-      <app-filter-textbox></app-filter-textbox>
+      <app-filter-textbox (changed)="filter($event)"></app-filter-textbox>
     </div>
     <div class='row'>
       <div class='col-md-6'> Filtered by: </div>

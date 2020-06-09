@@ -9,6 +9,7 @@ import { Terminator2Component } from "./terminator2/terminator2.component";
 import {SharedModules} from "./shared/shared.modules";
 import {FiltertextboxComponent} from "./products/filtertextbox.component";
 import {FormsModule} from "@angular/forms";
+import {DataService} from "./core/data.service";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import {FormsModule} from "@angular/forms";
     SharedModules,
     FormsModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
